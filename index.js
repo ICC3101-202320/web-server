@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
+const greetRoutes = require('./routes/greet/index.js')
 
 app.get('/', (req, res) => {
     res.send('Hola');
 });
+
+app.use('/greet', greetRoutes);
 
 app.listen(3000);
